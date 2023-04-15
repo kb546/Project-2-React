@@ -1,7 +1,15 @@
 import React from 'react';
 import './App.css';
 import getData from './Utils/getData.js';
-import PeopleTab from './Components/PeopleTab.js';
+import PeopleTab from './Components/People/PeopleTab.js';
+import Degrees from './Components/Degrees/Degrees.js';
+import Employment from './Components/Employment/Employment.js';
+import Minors from './Components/Minors/Minors';
+import About from './Components/About/About.js';
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar.js';
+
+
 
 class App extends React.Component{
 
@@ -45,22 +53,17 @@ class App extends React.Component{
     );
 
     return (
-      <div className="App">
-        <h1>{about.title}</h1>
-        <div>
-          <h3>{about.description}</h3>
-          <div className="quoteBubble">
-            <p>{about.quote}</p>
-            <p>--{about.quoteAuthor}</p>
-          </div>
-         </div>
-         {/* here is space for our other components! */}
-        <hr/>
-        <PeopleTab/>
-      </div>
-      
-
-
+      <div className='App' id='App'>
+        <Navbar />
+        <About /><br /><hr />
+        <PeopleTab />
+        <br /><hr />
+        <Degrees />
+        <br /><hr />
+        <Minors />
+        <br /><hr />
+        <Employment />
+    </div>
     );
   }
 }
